@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Мінна безпека — не підходь, не торкайся, телефонуй 101</title>
-<link rel="preload" href="fonts/NastupBasic.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/FixelText-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="NastupBasic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="FixelText-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%227%22%20fill%3D%22%23e5231b%22/%3E%3Crect%20x%3D%225.5%22%20y%3D%225.5%22%20width%3D%2289%22%20height%3D%2289%22%20rx%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223.5%22/%3E%3Cg%20transform%3D%22translate%2810%207%29%20scale%28.8%29%22%3E%3Cg%20stroke%3D%22%23fff%22%20stroke-width%3D%227.5%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M20%2066%2080%2090M80%2066%2020%2090%22/%3E%3C/g%3E%3Cg%20fill%3D%22%23fff%22%3E%3Ccircle%20cx%3D%2216.8%22%20cy%3D%2268.5%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2219.4%22%20cy%3D%2262%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2280.6%22%20cy%3D%2293.5%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2283.2%22%20cy%3D%2287%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2283.2%22%20cy%3D%2268.5%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2280.6%22%20cy%3D%2262%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2219.4%22%20cy%3D%2293.5%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2216.8%22%20cy%3D%2287%22%20r%3D%225%22/%3E%3C/g%3E%3Cpath%20d%3D%22M50%2012c-15%200-26%2010.5-26%2025%200%208.5%204%2014.5%209.5%2018.5v8.5c0%202.2%201.8%204%204%204h25c2.2%200%204-1.8%204-4v-8.5C72%2051.5%2076%2045.5%2076%2037c0-14.5-11-25-26-25z%22%20fill%3D%22%23fff%22/%3E%3Cellipse%20cx%3D%2240.5%22%20cy%3D%2238%22%20rx%3D%227%22%20ry%3D%227.5%22%20fill%3D%22%23e5231b%22/%3E%3Cellipse%20cx%3D%2259.5%22%20cy%3D%2238%22%20rx%3D%227%22%20ry%3D%227.5%22%20fill%3D%22%23e5231b%22/%3E%3Cpath%20d%3D%22M50%2047.5l-4%207h8z%22%20fill%3D%22%23e5231b%22/%3E%3Cpath%20d%3D%22M44%2061v7M50%2061v7M56%2061v7%22%20stroke%3D%22%23e5231b%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22/%3E%3C/g%3E%3C/svg%3E">
 <style>
-@font-face{font-family:"Nastup Basic";src:url(fonts/NastupBasic.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Fixel Text";src:url(fonts/FixelText-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
-@font-face{font-family:"Fixel Text";src:url(fonts/FixelText-SemiBold.woff2) format("woff2");font-weight:500 600;font-display:swap}
-@font-face{font-family:"Fixel Text";src:url(fonts/FixelText-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"Nastup Basic";src:url(NastupBasic.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Fixel Text";src:url(FixelText-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Fixel Text";src:url(FixelText-SemiBold.woff2) format("woff2");font-weight:500 600;font-display:swap}
+@font-face{font-family:"Fixel Text";src:url(FixelText-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
 :root{
   --bg:#f5f5f7; --ink:#000; --mute:#6e6e73; --line:rgba(0,0,0,.12);
   --red:#e5231b; --yellow:#ffd23f; --olive:#5d6040; --sand:#e8dfcc; --khaki:#2f3123;
@@ -62,6 +62,8 @@ img{display:block;max-width:100%}
 .readbar .pt:hover span,.readbar .pt:focus-visible span{opacity:1}
 .readbar .pt:focus-visible{outline:2px solid #000;outline-offset:1px}
 .nav{top:8px}
+
+section[id]{scroll-margin-top:72px}
 
 /* ---------- MOBILE MENU ---------- */
 .overlay{position:fixed;inset:0;z-index:70;background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch;visibility:hidden;opacity:0;transition:opacity .3s ease,visibility 0s linear .3s}
@@ -654,7 +656,7 @@ $("#newsGrid").innerHTML=NEWS.map(n=>`
   <article class="rv">
     <div class="top"><span class="tag ${n.tag==="Пастка"?"stroke":""}">${n.tag}</span>
       <span class="lvl">Ризик ${[1,2,3].map(i=>`<i class="${i>n.lvl?"off":""}"></i>`).join("")}</span></div>
-    <figure class="ill"><img src="img/${n.img}.webp" alt="${n.cap}" loading="lazy"><figcaption>На фото: ${n.cap}</figcaption></figure>
+    <figure class="ill"><img src="${n.img}.webp" alt="${n.cap}" loading="lazy"><figcaption>На фото: ${n.cap}</figcaption></figure>
     <h3 class="h6">${n.t}</h3><p>${n.p}</p>
   </article>`).join("");
 
@@ -676,7 +678,7 @@ function renderCat(){
   visible=(expanded||list.length<=LIMIT)?list:list.slice(0,LIMIT);
   $("#catGrid").innerHTML=visible.map((it,k)=>`
     <button class="item" data-k="${k}" aria-label="${it[1]} — відкрити фото">
-      <div class="ph"><img src="img/${it[0]}.webp" alt="${it[1]}" loading="lazy"></div>
+      <div class="ph"><img src="${it[0]}.webp" alt="${it[1]}" loading="lazy"></div>
       <div class="cap"><b>${it[1]}</b><span>${catName(it[2])}</span></div>
     </button>`).join("");
   $("#catGrid").querySelectorAll(".item").forEach(b=>b.onclick=()=>openLb(+b.dataset.k));
@@ -691,7 +693,7 @@ renderFilters();renderCat();
 
 /* ---------- LIGHTBOX ---------- */
 let lbk=0;const lb=$("#lb");
-function showLb(){const it=visible[lbk];$("#lbImg").src=`img/${it[0]}.webp`;$("#lbImg").alt=it[1];$("#lbName").textContent=it[1];$("#lbCat").textContent=catName(it[2]);
+function showLb(){const it=visible[lbk];$("#lbImg").src=`${it[0]}.webp`;$("#lbImg").alt=it[1];$("#lbName").textContent=it[1];$("#lbCat").textContent=catName(it[2]);
   const d=DESC[it[0]]||{},f=[["Що це",d.what],["Як може виглядати",d.looks],["Де можна натрапити",d.where]].filter(x=>x[1]);
   $("#lbFacts").innerHTML=f.map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
   if(d.todo)$("#lbTodo").textContent=d.todo;
@@ -839,6 +841,18 @@ function renderQ(){
   $("#next").onclick=()=>{qi++;renderQ()};
 }
 renderQ();
+
+/* ---------- ЯКІРНІ ПОСИЛАННЯ: без #хеша в адресі, сторінка завжди відкривається зверху ---------- */
+if("scrollRestoration" in history)history.scrollRestoration="manual";
+if(location.hash){history.replaceState(null,"",location.pathname+location.search)}
+addEventListener("load",()=>scrollTo(0,0));
+document.addEventListener("click",e=>{
+  const a=e.target.closest('a[href^="#"]');if(!a)return;
+  const id=a.getAttribute("href").slice(1);
+  e.preventDefault();
+  if(!id||id==="top"){scrollTo({top:0,behavior:"smooth"});return}
+  const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:"smooth",block:"start"});
+});
 
 /* ---------- PROGRESS ---------- */
 (function(){
