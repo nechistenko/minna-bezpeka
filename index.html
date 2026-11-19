@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мінна безпека — не підходь, не торкайся, телефонуй 101</title>
+<link rel="preload" href="fonts/NastupBasic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/FixelText-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20rx%3D%227%22%20fill%3D%22%23e5231b%22/%3E%3Crect%20x%3D%225.5%22%20y%3D%225.5%22%20width%3D%2289%22%20height%3D%2289%22%20rx%3D%223.5%22%20fill%3D%22none%22%20stroke%3D%22%23fff%22%20stroke-width%3D%223.5%22/%3E%3Cg%20transform%3D%22translate%2810%207%29%20scale%28.8%29%22%3E%3Cg%20stroke%3D%22%23fff%22%20stroke-width%3D%227.5%22%20stroke-linecap%3D%22round%22%3E%3Cpath%20d%3D%22M20%2066%2080%2090M80%2066%2020%2090%22/%3E%3C/g%3E%3Cg%20fill%3D%22%23fff%22%3E%3Ccircle%20cx%3D%2216.8%22%20cy%3D%2268.5%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2219.4%22%20cy%3D%2262%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2280.6%22%20cy%3D%2293.5%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2283.2%22%20cy%3D%2287%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2283.2%22%20cy%3D%2268.5%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2280.6%22%20cy%3D%2262%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2219.4%22%20cy%3D%2293.5%22%20r%3D%225%22/%3E%3Ccircle%20cx%3D%2216.8%22%20cy%3D%2287%22%20r%3D%225%22/%3E%3C/g%3E%3Cpath%20d%3D%22M50%2012c-15%200-26%2010.5-26%2025%200%208.5%204%2014.5%209.5%2018.5v8.5c0%202.2%201.8%204%204%204h25c2.2%200%204-1.8%204-4v-8.5C72%2051.5%2076%2045.5%2076%2037c0-14.5-11-25-26-25z%22%20fill%3D%22%23fff%22/%3E%3Cellipse%20cx%3D%2240.5%22%20cy%3D%2238%22%20rx%3D%227%22%20ry%3D%227.5%22%20fill%3D%22%23e5231b%22/%3E%3Cellipse%20cx%3D%2259.5%22%20cy%3D%2238%22%20rx%3D%227%22%20ry%3D%227.5%22%20fill%3D%22%23e5231b%22/%3E%3Cpath%20d%3D%22M50%2047.5l-4%207h8z%22%20fill%3D%22%23e5231b%22/%3E%3Cpath%20d%3D%22M44%2061v7M50%2061v7M56%2061v7%22%20stroke%3D%22%23e5231b%22%20stroke-width%3D%222.4%22%20stroke-linecap%3D%22round%22/%3E%3C/g%3E%3C/svg%3E">
+<style>
+@font-face{font-family:"Nastup Basic";src:url(fonts/NastupBasic.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Fixel Text";src:url(fonts/FixelText-Regular.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Fixel Text";src:url(fonts/FixelText-SemiBold.woff2) format("woff2");font-weight:500 600;font-display:swap}
+@font-face{font-family:"Fixel Text";src:url(fonts/FixelText-Bold.woff2) format("woff2");font-weight:700;font-display:swap}
+:root{
+  --bg:#f5f5f7; --ink:#000; --mute:#6e6e73; --line:rgba(0,0,0,.12);
+  --red:#e5231b; --yellow:#ffd23f; --olive:#5d6040; --sand:#e8dfcc; --khaki:#2f3123;
+  --pill:rgba(215,215,215,.6); --glass:rgba(255,255,255,.6);
+  --font:"Fixel Text", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --display:"Nastup Basic", "Arial Black", Impact, sans-serif;
+  --pad:clamp(16px,2.2vw,32px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.4;letter-spacing:-.015em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.lock{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+img{display:block;max-width:100%}
+.wrap{padding-left:var(--pad);padding-right:var(--pad)}
+.display{font-weight:700;text-transform:uppercase;line-height:.92;letter-spacing:-.02em}
+.h2{font-weight:700;text-transform:uppercase;font-size:clamp(34px,4.4vw,68px);line-height:.98;letter-spacing:-.02em;overflow-wrap:break-word}
+.h6{font-weight:700;font-size:clamp(22px,1.9vw,28px);line-height:1.15;letter-spacing:-.01em}
+.mute{color:var(--mute)}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px var(--pad);pointer-events:none}
+.nav>*{pointer-events:auto}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;white-space:nowrap}
+.logo svg{width:36px;height:36px;flex:none}
+.pills{display:flex;gap:8px;align-items:center}
+.pill{display:flex;align-items:center;gap:22px;background:var(--pill);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:99px;padding:10px 20px;font-weight:700;font-size:16px;line-height:1.2;white-space:nowrap}
+.pill a{position:relative}
+.pill a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.pill a:hover::after{transform:scaleX(1)}
+.pill.call{background:var(--red);color:#fff;gap:8px}
+.pill.call .dot{width:8px;height:8px;border-radius:50%;background:#fff;animation:blink 1.4s infinite}
+.menu-btn{display:none;gap:10px}
+.menu-btn .bars{width:16px;height:10px;position:relative}
+.menu-btn .bars::before,.menu-btn .bars::after{content:"";position:absolute;left:0;right:0;height:2px;background:currentColor;border-radius:2px}
+.menu-btn .bars::before{top:0}.menu-btn .bars::after{bottom:0}
+@keyframes blink{50%{opacity:.25}}
+
+/* ---------- PROGRESS ---------- */
+.readbar{position:fixed;left:0;right:0;top:7px;height:2px;z-index:55;background:rgba(0,0,0,.1)}
+.readbar .fill{position:absolute;left:0;top:0;bottom:0;width:100%;transform-origin:left;transform:scaleX(0);background:var(--red)}
+.readbar .pt{position:absolute;top:1px;width:22px;height:22px;margin:-11px 0 0 -11px;display:grid;place-items:center;border-radius:50%}
+.readbar .pt i{width:9px;height:9px;border-radius:50%;background:var(--bg);border:1.5px solid rgba(0,0,0,.35);transition:background .3s,border-color .3s,transform .3s}
+.readbar .pt.done i{background:var(--red);border-color:var(--red)}
+.readbar .pt:hover i,.readbar .pt:focus-visible i{transform:scale(1.35);border-color:#000}
+.readbar .pt span{position:absolute;top:20px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:12px;font-weight:700;background:#000;color:#fff;padding:4px 8px;border-radius:99px;opacity:0;pointer-events:none;transition:opacity .2s}
+.readbar .pt:hover span,.readbar .pt:focus-visible span{opacity:1}
+.readbar .pt:focus-visible{outline:2px solid #000;outline-offset:1px}
+.nav{top:8px}
+
+/* ---------- MOBILE MENU ---------- */
+.overlay{position:fixed;inset:0;z-index:70;background:var(--bg);overflow-y:auto;-webkit-overflow-scrolling:touch;visibility:hidden;opacity:0;transition:opacity .3s ease,visibility 0s linear .3s}
+.overlay.open{visibility:visible;opacity:1;transition:opacity .3s ease}
+.overlay .bar{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;padding:16px var(--pad);background:var(--bg)}
+.overlay nav{padding:8px var(--pad) 0}
+.overlay nav a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-weight:700;text-transform:uppercase;font-size:clamp(28px,min(9vw,7vh),64px);line-height:1;letter-spacing:-.02em;transform:translateY(16px);opacity:0;transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .5s}
+.overlay nav a small{font-size:14px;font-weight:400;color:var(--mute);letter-spacing:0}
+.overlay.open nav a{transform:none;opacity:1}
+.overlay nav a:nth-child(2){transition-delay:.04s}.overlay nav a:nth-child(3){transition-delay:.08s}.overlay nav a:nth-child(4){transition-delay:.12s}.overlay nav a:nth-child(5){transition-delay:.16s}.overlay nav a:nth-child(6){transition-delay:.2s}
+.overlay .foot{padding:24px var(--pad) 32px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.overlay .foot p{color:var(--mute);font-size:16px}
+
+/* ---------- HERO ---------- */
+.hero{padding-top:80px}
+.hero-title{white-space:nowrap;display:block;overflow:hidden;font-size:15vw;line-height:.9;padding-top:.06em}
+.hero-title span{display:inline-block;transform:translateY(105%);animation:rise 1s cubic-bezier(.2,.8,.2,1) forwards}
+.hero-title span:nth-child(2){animation-delay:.08s}
+@keyframes rise{to{transform:none}}
+.hero-media{position:relative;margin-top:14px;aspect-ratio:16/8.4;background:var(--khaki);overflow:hidden;color:#fff}
+.hero-media svg.field{position:absolute;inset:0;width:100%;height:100%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-media .read{position:absolute;left:var(--pad);bottom:var(--pad);background:var(--glass);color:#000;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:99px;padding:10px 20px;font-weight:700;font-size:16px;display:flex;gap:10px;align-items:center}
+.hero-media .label{position:absolute;transform:translate(-50%,-50%);pointer-events:none;font-size:12px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:6px 10px;border-radius:99px;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);white-space:nowrap}
+.tagline{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--pad);padding:28px 0 0}
+.tagline .display{font-size:clamp(32px,3.8vw,58px)}
+.tagline p{align-self:end;max-width:460px;font-size:19px;justify-self:end}
+
+/* ---------- MARQUEE ---------- */
+.marquee{margin:clamp(48px,6vw,90px) 0 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:14px 0}
+.marquee div{display:inline-block;animation:mq 34s linear infinite;font-weight:700;text-transform:uppercase;font-size:clamp(24px,2.6vw,38px);letter-spacing:-.01em}
+.marquee b{color:var(--red);margin:0 .5em}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- SECTION HEAD ---------- */
+section{padding-top:clamp(70px,9vw,140px)}
+.head{display:flex;justify-content:space-between;align-items:end;gap:12px 20px;margin-bottom:28px;flex-wrap:wrap}
+.link{font-weight:700;font-size:16px;border-bottom:1.5px solid;padding-bottom:2px}
+.link.plain{border:0;color:var(--mute);font-weight:400}
+
+/* ---------- RULE CARDS ---------- */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 16px}
+.card .tile{position:relative;aspect-ratio:4/5;overflow:hidden;display:grid;place-items:center}
+.card .tile svg{width:62%;height:auto;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.card:hover .tile svg{transform:scale(1.06) rotate(-2deg)}
+.card .num{position:absolute;left:18px;top:14px;font-weight:700;font-size:26px}
+.card .meta{padding-top:14px;font-size:15px;color:var(--mute)}
+.card h3{margin-top:2px}
+.card p{margin-top:6px;color:var(--mute);font-size:17px;max-width:95%}
+.tag{display:inline-block;background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:99px;padding:8px 16px;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.03em}
+.tag.stroke{box-shadow:inset 0 0 0 1px #000}
+
+/* ---------- INTRO ---------- */
+.intro{display:grid;grid-template-columns:1fr 2fr;gap:var(--pad)}
+.intro .big{font-size:clamp(26px,3vw,46px);line-height:1.12;letter-spacing:-.015em}
+.intro .big em{font-style:italic;color:var(--red)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:clamp(50px,6vw,90px);border-top:1px solid var(--line);padding-top:26px}
+.stat .n{font-weight:700;font-size:clamp(46px,5.6vw,90px);line-height:.95;letter-spacing:-.03em;white-space:nowrap}
+.stat .t{margin-top:10px;font-size:16px;color:var(--mute);max-width:260px}
+
+/* ---------- STEPS ---------- */
+.steps{display:grid;grid-template-columns:1fr 1.4fr;gap:var(--pad);align-items:start}
+.steps .sticky{position:sticky;top:96px}
+.steps .sticky .h2{font-size:clamp(44px,5.4vw,88px)}
+.steps .sticky p{margin-top:18px;max-width:380px;font-size:19px}
+.step{display:grid;grid-template-columns:90px 1fr;gap:16px;padding:26px 0;border-top:1px solid var(--line)}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step .i{font-weight:700;font-size:50px;line-height:.9}
+.step h3{font-size:clamp(23px,2.1vw,32px);font-weight:700;line-height:1.12;letter-spacing:-.01em}
+.step p{margin-top:8px;color:var(--mute);font-size:18px;max-width:560px}
+.step.warn .i{color:var(--red)}
+
+/* ---------- SIGNS ---------- */
+.signs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.sign{background:#fff;padding:22px;display:flex;flex-direction:column;min-height:360px}
+.sign .art{flex:1;display:grid;place-items:center;padding:14px 0}
+.sign .art svg{width:100%;max-width:220px;height:150px}
+.sign h3{font-weight:700;font-size:22px}
+.sign p{margin-top:6px;color:var(--mute);font-size:16px}
+.sign.dark{background:#000;color:#fff}
+.sign.dark p{color:rgba(255,255,255,.65)}
+.note{margin-top:16px;font-size:16px;color:var(--mute);max-width:720px}
+
+/* ---------- THREATS ---------- */
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.news article{border-top:1px solid #000;padding:16px 0 30px;display:flex;flex-direction:column;gap:14px}
+.news .top{display:flex;justify-content:space-between;align-items:center}
+.news .lvl{display:flex;gap:4px;align-items:center;font-size:14px;color:var(--mute)}
+.news .lvl i{width:10px;height:10px;border-radius:3px;background:#000;display:inline-block}
+.news .lvl i.off{background:rgba(0,0,0,.15)}
+.news .ill{background:#fff;aspect-ratio:16/10;position:relative;overflow:hidden}
+.news .ill img{position:absolute;inset:6%;width:88%;height:88%;object-fit:contain;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.news article:hover .ill img{transform:scale(1.06)}
+.news .ill figcaption{position:absolute;left:12px;bottom:10px;font-size:13px;color:var(--mute)}
+.news p{color:var(--mute);font-size:17px}
+
+/* ---------- CATALOG ---------- */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.filters button{border-radius:99px;padding:9px 16px;font-weight:700;font-size:14px;background:#fff;transition:background .2s,color .2s}
+.filters button:hover{background:#e6e6ea}
+.filters button[aria-pressed="true"]{background:#000;color:#fff}
+.filters button span{opacity:.5;font-weight:400;margin-left:4px}
+.cat{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.item{background:#fff;text-align:left;display:flex;flex-direction:column;transition:transform .3s}
+.item:hover{transform:translateY(-3px)}
+.item .ph{aspect-ratio:1;position:relative;overflow:hidden}
+.item .ph img{position:absolute;inset:8%;width:84%;height:84%;object-fit:contain;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.item:hover .ph img{transform:scale(1.07)}
+.item .cap{padding:12px 14px 14px;border-top:1px solid var(--line)}
+.item .cap b{display:block;font-size:18px;line-height:1.15}
+.item .cap span{display:block;margin-top:3px;font-size:13px;color:var(--mute)}
+.more{display:flex;justify-content:center;margin-top:24px}
+.credit{margin-top:14px;font-size:14px;color:var(--mute)}
+
+.lb{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);display:grid;place-items:center;padding:var(--pad);visibility:hidden;opacity:0;transition:opacity .25s,visibility 0s .25s}
+.lb.open{visibility:visible;opacity:1;transition:opacity .25s}
+.lb .box{background:#fff;width:min(1000px,100%);max-height:100%;overflow:auto;display:grid;grid-template-columns:1fr 1.1fr;align-items:start}
+.lb .box .img{aspect-ratio:1;background:#fff;position:sticky;top:0}
+.lb .box .img img{position:absolute;inset:6%;width:88%;height:88%;object-fit:contain}
+.lb .box .txt{padding:28px;display:flex;flex-direction:column;gap:14px;border-left:1px solid var(--line)}
+.lb .box h3{font-size:clamp(36px,4vw,56px);line-height:1;text-transform:uppercase}
+.lb .warnbox{background:var(--red);color:#fff;padding:16px;font-weight:700;font-size:17px;line-height:1.3}
+.lb .facts{display:grid;gap:12px;border-top:1px solid var(--line);padding-top:14px}
+.lb .facts dt{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--mute)}
+.lb .facts dd{margin-top:2px;font-size:16px;line-height:1.4}
+.lb .disc{font-size:13px;color:var(--mute);line-height:1.4}
+.lb .close{align-self:flex-end}
+.lb .navs{display:flex;gap:8px}
+
+/* ---------- PLACES ---------- */
+.places{border-top:1px solid #000}
+.place{display:grid;grid-template-columns:80px 1fr auto;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);transition:padding .3s,background .3s}
+.place:hover{padding-left:12px;background:#fff}
+.place .i{color:var(--mute);font-variant-numeric:tabular-nums}
+.place .t{font-weight:700;text-transform:uppercase;font-size:clamp(26px,3.2vw,50px);line-height:1;letter-spacing:-.02em}
+.place .d{color:var(--mute);font-size:16px;max-width:360px;text-align:right}
+
+/* ---------- QUIZ ---------- */
+.quiz{background:#000;color:#fff;padding:clamp(24px,4vw,56px);display:grid;grid-template-columns:1fr 1.3fr;gap:var(--pad);min-height:520px}
+.quiz .h2{font-size:clamp(44px,5.4vw,84px)}
+.quiz .left p{margin-top:16px;color:rgba(255,255,255,.65);max-width:340px;font-size:18px}
+.quiz .progress{display:flex;gap:6px;margin-bottom:22px}
+.quiz .progress i{flex:1;height:4px;border-radius:4px;background:rgba(255,255,255,.2)}
+.quiz .progress i.on{background:var(--yellow)}
+.quiz .q{font-size:clamp(23px,2.2vw,34px);font-weight:700;line-height:1.15}
+.quiz .opts{display:grid;gap:10px;margin-top:24px}
+.quiz .opt{text-align:left;padding:16px 20px;border-radius:14px;background:rgba(255,255,255,.08);font-size:18px;transition:background .2s}
+.quiz .opt:hover:not([disabled]){background:rgba(255,255,255,.16)}
+.quiz .opt.right{background:#1f7a3d}
+.quiz .opt.wrong{background:var(--red)}
+.quiz .opt[disabled]{cursor:default}
+.quiz .fb{margin-top:16px;color:rgba(255,255,255,.75);font-size:17px;min-height:44px}
+.quiz .next{margin-top:10px;background:#fff;color:#000;border-radius:99px;padding:12px 24px;font-weight:700;display:none}
+.quiz .score{font-weight:700;font-size:clamp(90px,12vw,170px);line-height:.85;color:var(--yellow)}
+
+/* ---------- EMERGENCY ---------- */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.numcard{background:#fff;padding:22px;display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:230px;transition:background .25s,color .25s}
+.numcard:hover{background:#000;color:#fff}
+.numcard .n{font-weight:700;font-size:clamp(64px,7vw,112px);line-height:.85;letter-spacing:-.03em}
+.numcard .t{font-weight:700;font-size:20px}
+.numcard .s{font-size:15px;opacity:.65}
+.numcard.main{background:var(--red);color:#fff}
+.free{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;background:#fff;border-radius:99px;padding:9px 16px}
+.free i{width:8px;height:8px;border-radius:50%;background:#1f9d4c}
+
+/* ---------- CTA ---------- */
+.cta{padding-top:clamp(80px,10vw,160px);text-align:center}
+.cta .kicker{font-weight:700;font-size:17px}
+.cta .display{font-size:clamp(52px,10.5vw,180px);margin-top:10px}
+.cta .btns{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:#000;color:#fff;border-radius:99px;padding:15px 26px;font-weight:700;font-size:17px;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:var(--pill);color:#000}
+.toast{margin-top:14px;font-size:16px;color:var(--mute);min-height:22px}
+
+/* ---------- FOOTER ---------- */
+footer{margin-top:clamp(80px,10vw,150px);border-top:1px solid #000;padding:28px 0 24px}
+.fgrid{display:grid;grid-template-columns:2fr 1fr 1fr 1.4fr;gap:var(--pad)}
+.fgrid h4{font-size:14px;color:var(--mute);font-weight:400;margin-bottom:10px}
+.fgrid a{display:block;font-weight:700;font-size:17px;margin-bottom:6px}
+.fgrid .src a{font-weight:400;font-size:15px;line-height:1.3;margin-bottom:10px;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(0,0,0,.3)}
+.fwm{font-weight:700;text-transform:uppercase;font-size:15vw;line-height:.9;letter-spacing:-.02em;margin-top:40px;white-space:nowrap;overflow:hidden}
+.fbottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--mute);margin-top:18px}
+
+/* ---------- REVEAL ---------- */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+
+/* ---------- NASTUP DISPLAY TYPE ---------- */
+.display,.h2,.h6,.step h3,.step .i,.sign h3,.place .t,.stat .n,.numcard .n,.numcard .t,.card .num,.marquee div,.item .cap b,.lb .box h3,.quiz .score,.fwm,.hero-title,.logo span,.overlay nav a,.cta .display,.tag,.news .lvl,.hero-media .label{font-family:var(--display);font-weight:400;letter-spacing:0}
+.display{line-height:1}
+.hero-title{line-height:1;padding-top:.04em}
+.h2{font-size:clamp(28px,3.4vw,54px);line-height:1.05}
+.h6{font-size:clamp(17px,1.35vw,21px);line-height:1.2}
+.tagline .display{font-size:clamp(24px,2.7vw,42px);line-height:1.1}
+.marquee div{font-size:clamp(18px,2vw,30px)}
+.card .num{font-size:20px}
+.stat .n{font-size:clamp(32px,3.4vw,56px);line-height:1}
+.stat .n small{font-family:var(--font);font-weight:700;font-size:.45em;letter-spacing:0;margin-left:.15em}
+.steps .sticky .h2{font-size:clamp(32px,3.8vw,62px)}
+.step .i{font-size:40px;line-height:1}
+.step h3{font-size:clamp(17px,1.5vw,23px);line-height:1.2}
+.sign h3{font-size:18px;line-height:1.2}
+.place .t{font-size:clamp(20px,2.4vw,38px);line-height:1.1}
+.quiz .h2{font-size:clamp(34px,4vw,64px)}
+.quiz .score{font-size:clamp(70px,9vw,140px);line-height:1}
+.numcard .n{font-size:clamp(48px,5.2vw,84px);line-height:1}
+.numcard .t{font-size:16px}
+.item .cap b{font-size:15px;line-height:1.25}
+.lb .box h3{font-size:clamp(26px,2.8vw,42px);line-height:1.1}
+.cta .display{font-size:clamp(36px,8vw,140px)}
+.fwm{line-height:1}
+.overlay nav a{font-size:clamp(22px,min(7vw,5.6vh),48px);padding:14px 0}
+.logo span{font-size:14px}
+.tag{font-size:11px;letter-spacing:.02em}
+.hero-media .label{font-size:11px}
+.logo svg{width:38px;height:38px}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:1100px){
+  .pill.links{display:none}
+  .menu-btn{display:flex}
+  .cat{grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width:991px){
+  .grid3,.news,.signs{grid-template-columns:1fr 1fr}
+  .intro,.steps,.quiz,.tagline{grid-template-columns:1fr}
+  .tagline p{justify-self:start}
+  .steps .sticky{position:static}
+  .stats{grid-template-columns:1fr 1fr;row-gap:32px}
+  .nums{grid-template-columns:1fr 1fr}
+  .cat{grid-template-columns:repeat(3,1fr)}
+  .fgrid{grid-template-columns:1fr 1fr}
+  .place .d{display:none}
+  .place{grid-template-columns:56px 1fr}
+  .lb .box{grid-template-columns:1fr}
+  .lb .box .txt{border-left:0;border-top:1px solid var(--line)}
+  .lb .box .img{position:relative}
+}
+@media (max-width:600px){
+  .grid3,.news,.signs{grid-template-columns:1fr}
+  .cat{grid-template-columns:1fr 1fr;gap:10px}
+  .item .cap b{font-size:16px}
+  .card .tile{aspect-ratio:4/3}
+  .card .tile svg{width:44%}
+  .hero-media{aspect-ratio:4/3}
+  .logo span{display:none}
+  .pill{padding:10px 16px}
+  .step{grid-template-columns:52px 1fr}
+  .step .i{font-size:28px}
+  .numcard{min-height:170px;padding:16px}
+  .stats{grid-template-columns:1fr}
+  .h2{font-size:25px}
+  .steps .sticky .h2{font-size:30px}
+  .step h3{font-size:17px}
+  .place .t{font-size:19px}
+  .stat .n{font-size:40px}
+  .stat .t{max-width:none}
+  .fgrid{grid-template-columns:1fr}
+  .lb .box .img{aspect-ratio:4/3}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .hero-title span{transform:none}
+  .rv,.overlay nav a{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- PROGRESS -->
+<div class="readbar" id="progress" aria-label="Прогрес"><div class="fill" id="pfill"></div></div>
+
+<!-- NAV -->
+<header class="nav">
+  <a href="#top" class="logo" aria-label="Мінна безпека — на початок">
+    <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="7" fill="#e5231b"/><rect x="5.5" y="5.5" width="89" height="89" rx="3.5" fill="none" stroke="#fff" stroke-width="3.5"/><g transform="translate(10 7) scale(.8)"><g stroke="#fff" stroke-width="7.5" stroke-linecap="round"><path d="M20 66 80 90M80 66 20 90"/></g><g fill="#fff"><circle cx="16.8" cy="68.5" r="5"/><circle cx="19.4" cy="62" r="5"/><circle cx="80.6" cy="93.5" r="5"/><circle cx="83.2" cy="87" r="5"/><circle cx="83.2" cy="68.5" r="5"/><circle cx="80.6" cy="62" r="5"/><circle cx="19.4" cy="93.5" r="5"/><circle cx="16.8" cy="87" r="5"/></g><path d="M50 12c-15 0-26 10.5-26 25 0 8.5 4 14.5 9.5 18.5v8.5c0 2.2 1.8 4 4 4h25c2.2 0 4-1.8 4-4v-8.5C72 51.5 76 45.5 76 37c0-14.5-11-25-26-25z" fill="#fff"/><ellipse cx="40.5" cy="38" rx="7" ry="7.5" fill="#e5231b"/><ellipse cx="59.5" cy="38" rx="7" ry="7.5" fill="#e5231b"/><path d="M50 47.5l-4 7h8z" fill="#e5231b"/><path d="M44 61v7M50 61v7M56 61v7" stroke="#e5231b" stroke-width="2.4" stroke-linecap="round"/></g></svg>
+    <span>Мінна безпека</span>
+  </a>
+  <div class="pills">
+    <nav class="pill links" aria-label="Розділи">
+      <a href="#rules">Правила</a>
+      <a href="#field">Мінне поле</a>
+      <a href="#signs">Знаки</a>
+      <a href="#catalog">Довідник</a>
+      <a href="#quiz">Тест</a>
+    </nav>
+    <button class="pill menu-btn" id="openMenu" aria-expanded="false" aria-controls="menu"><i class="bars" aria-hidden="true"></i>Меню</button>
+    <a class="pill call" href="tel:101" title="ДСНС — 101"><i class="dot"></i>101</a>
+  </div>
+</header>
+
+<div class="overlay" id="menu" role="dialog" aria-modal="true" aria-label="Меню">
+  <div class="bar">
+    <a href="#top" class="logo" data-close>
+      <svg viewBox="0 0 100 100" aria-hidden="true"><rect width="100" height="100" rx="7" fill="#e5231b"/><rect x="5.5" y="5.5" width="89" height="89" rx="3.5" fill="none" stroke="#fff" stroke-width="3.5"/><g transform="translate(10 7) scale(.8)"><g stroke="#fff" stroke-width="7.5" stroke-linecap="round"><path d="M20 66 80 90M80 66 20 90"/></g><g fill="#fff"><circle cx="16.8" cy="68.5" r="5"/><circle cx="19.4" cy="62" r="5"/><circle cx="80.6" cy="93.5" r="5"/><circle cx="83.2" cy="87" r="5"/><circle cx="83.2" cy="68.5" r="5"/><circle cx="80.6" cy="62" r="5"/><circle cx="19.4" cy="93.5" r="5"/><circle cx="16.8" cy="87" r="5"/></g><path d="M50 12c-15 0-26 10.5-26 25 0 8.5 4 14.5 9.5 18.5v8.5c0 2.2 1.8 4 4 4h25c2.2 0 4-1.8 4-4v-8.5C72 51.5 76 45.5 76 37c0-14.5-11-25-26-25z" fill="#fff"/><ellipse cx="40.5" cy="38" rx="7" ry="7.5" fill="#e5231b"/><ellipse cx="59.5" cy="38" rx="7" ry="7.5" fill="#e5231b"/><path d="M50 47.5l-4 7h8z" fill="#e5231b"/><path d="M44 61v7M50 61v7M56 61v7" stroke="#e5231b" stroke-width="2.4" stroke-linecap="round"/></g></svg>
+      <span>Мінна безпека</span>
+    </a>
+    <button class="pill" id="closeMenu">Закрити ✕</button>
+  </div>
+  <nav>
+    <a href="#rules" data-close>Правила <small>01</small></a>
+    <a href="#field" data-close>Мінне поле <small>02</small></a>
+    <a href="#signs" data-close>Знаки <small>03</small></a>
+    <a href="#catalog" data-close>Довідник <small>04</small></a>
+    <a href="#quiz" data-close>Тест <small>05</small></a>
+    <a href="#help" data-close>Допомога <small>06</small></a>
+  </nav>
+  <div class="foot">
+    <p>Побачив підозрілий предмет — телефонуй</p>
+    <a class="pill call" href="tel:101"><i class="dot"></i>101 — ДСНС</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<main id="top" class="wrap hero">
+  <h1 class="display hero-title" aria-label="Мінна безпека"><span>Мінна&nbsp;</span><span>безпека</span></h1>
+
+  <div class="hero-media" id="heroMedia">
+    <svg class="field" id="heroMap" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1600 840" aria-hidden="true"></svg>
+    <a href="#rules" class="read">Читати <span aria-hidden="true">↓</span></a>
+  </div>
+
+  <div class="tagline">
+    <h2 class="display rv">Побачив — не підходь. Не торкайся. Телефонуй&nbsp;101.</h2>
+    <p class="rv">Близько чверті території України може бути забруднена вибухонебезпечними предметами. Три прості правила і кілька хвилин читання можуть врятувати життя — твоє і тих, хто поруч.</p>
+  </div>
+</main>
+
+<div class="marquee" aria-hidden="true"><div id="mq"></div></div>
+
+<!-- RULES -->
+<section id="rules" class="wrap">
+  <div class="head">
+    <h2 class="h2 rv">Головні правила</h2>
+    <a href="#field" class="link">Що робити на мінному полі</a>
+  </div>
+  <div class="grid3" id="rulesGrid"></div>
+</section>
+
+<!-- INTRO + STATS -->
+<section class="wrap">
+  <div class="intro">
+    <div class="mute rv" style="font-weight:700">Чому це важливо</div>
+    <p class="big rv">Міна не відрізняє військового від дитини, тракториста чи грибника. Вона може чекати роками — <em>у траві, на узбіччі, у покинутому будинку</em> або в іграшці. Більшість трагедій трапляється не через незнання, а через «та я лише подивлюся».</p>
+  </div>
+  <div class="stats">
+    <div class="stat rv"><div class="n" data-count="25" data-suf="%">25%</div><div class="t">території України потенційно забруднено вибухонебезпечними предметами</div></div>
+    <div class="stat rv"><div class="n" data-count="1679">1 679</div><div class="t">цивільних загинули (483) або були поранені (1 196) з лютого 2022 до лютого 2026 року</div></div>
+    <div class="stat rv"><div class="n">1<small style="margin:0 .25em">з</small>9</div><div class="t">постраждалих від мін — дитина</div></div>
+    <div class="stat rv"><div class="n" data-count="41924" data-suf="<small>км²</small>">41 924<small>км²</small></div><div class="t">уже повернуто до безпечного використання (станом на лютий 2026 року)</div></div>
+  </div>
+</section>
+
+<!-- MINEFIELD STEPS -->
+<section id="field" class="wrap">
+  <div class="steps">
+    <div class="sticky">
+      <h2 class="h2 rv">Якщо опинився на мінному полі</h2>
+      <p class="mute rv">Головне — не панікувати й не рухатися. Кожен необдуманий крок небезпечніший за очікування.</p>
+    </div>
+    <div>
+      <div class="step rv"><div class="i">01</div><div><h3>Зупинись. Не роби жодного кроку</h3><p>Поруч з однією міною майже завжди є інші. Не присідай, не лягай і не розвертайся на місці.</p></div></div>
+      <div class="step rv"><div class="i">02</div><div><h3>Попередь людей поруч</h3><p>Голосно скажи: «Стій, міни!» Усі, хто з тобою, теж мають зупинитися там, де стоять.</p></div></div>
+      <div class="step rv"><div class="i">03</div><div><h3>Телефонуй 101 або 112</h3><p>Опиши, де ти: населений пункт, дорога, орієнтири. Якщо можеш — передай координати з карти в телефоні. Немає зв’язку — голосно клич на допомогу.</p></div></div>
+      <div class="step rv"><div class="i">04</div><div><h3>Чекай рятувальників на місці</h3><p>Фахівці ДСНС приїдуть і безпечно виведуть тебе. Не намагайся «обстежити» землю палицею чи руками.</p></div></div>
+      <div class="step rv"><div class="i">05</div><div><h3>Лише якщо допомоги не буде — назад по своїх слідах</h3><p>Повертайся точно тим шляхом, яким прийшов, ступаючи у власні сліди. Ніяких «коротших» шляхів.</p></div></div>
+      <div class="step warn rv"><div class="i">!</div><div><h3>Якщо хтось підірвався — не біжи до нього</h3><p>Там можуть бути інші міни. Клич рятувальників, говори з постраждалим, підказуй, як накласти турнікет, якщо він може зробити це сам.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SIGNS -->
+<section id="signs" class="wrap">
+  <div class="head">
+    <h2 class="h2 rv">Знаки небезпеки</h2>
+    <span class="link plain">Офіційні та саморобні</span>
+  </div>
+  <div class="signs" id="signsGrid"></div>
+  <p class="note">Ніколи не знімай і не переставляй попереджувальні знаки — ними хтось позначив смертельну небезпеку. Якщо бачиш будь-яку дивну розмітку на місцевості, обійди це місце знайомою дорогою.</p>
+</section>
+
+<!-- THREATS -->
+<section id="threats" class="wrap">
+  <div class="head">
+    <h2 class="h2 rv">Як виглядає небезпека</h2>
+    <a href="#catalog" class="link">Повний довідник</a>
+  </div>
+  <div class="news" id="newsGrid"></div>
+</section>
+
+<!-- CATALOG -->
+<section id="catalog" class="wrap">
+  <div class="head">
+    <h2 class="h2 rv">Довідник небезпечних предметів</h2>
+    <span class="link plain" id="catCount">55 предметів</span>
+  </div>
+  <div class="filters" id="filters" role="group" aria-label="Категорії"></div>
+  <div class="cat" id="catGrid"></div>
+  <div class="more"><button class="btn ghost" id="moreBtn">Показати всі</button></div>
+  <p class="credit">Фото: ДСНС України. Предмети на фото можуть виглядати інакше: бути брудними, іржавими, пошкодженими або частково закопаними.</p>
+</section>
+
+<!-- PLACES -->
+<section class="wrap">
+  <div class="head"><h2 class="h2 rv">Де найбільший ризик</h2></div>
+  <div class="places" id="places"></div>
+</section>
+
+<!-- QUIZ -->
+<section id="quiz" class="wrap">
+  <div class="quiz">
+    <div class="left">
+      <h2 class="h2">Перевір себе</h2>
+      <p>П’ять запитань — дві хвилини. Пройди разом із дітьми чи батьками.</p>
+    </div>
+    <div id="quizBox" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- EMERGENCY -->
+<section id="help" class="wrap">
+  <div class="head">
+    <h2 class="h2 rv">Екстрені номери</h2>
+    <span class="free"><i></i>Дзвінки безкоштовні</span>
+  </div>
+  <div class="nums">
+    <a class="numcard main" href="tel:101"><span class="n">101</span><span><span class="t">ДСНС</span><br><span class="s">Підозрілий предмет, мінне поле</span></span></a>
+    <a class="numcard" href="tel:102"><span class="n">102</span><span><span class="t">Поліція</span><br><span class="s">Охорона місця знахідки</span></span></a>
+    <a class="numcard" href="tel:103"><span class="n">103</span><span><span class="t">Швидка</span><br><span class="s">Є постраждалі</span></span></a>
+    <a class="numcard" href="tel:112"><span class="n">112</span><span><span class="t">Єдиний номер</span><br><span class="s">Усі екстрені служби</span></span></a>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="wrap cta">
+  <div class="kicker">Поділися з тими, кого любиш</div>
+  <div class="display">Знання рятує</div>
+  <div class="btns">
+    <button class="btn" id="copyMemo">Скопіювати пам’ятку <span aria-hidden="true">↗</span></button>
+    <a class="btn ghost" href="#quiz">Пройти тест</a>
+  </div>
+  <div class="toast" id="toast" aria-live="polite"></div>
+</div>
+
+<!-- FOOTER -->
+<footer class="wrap">
+  <div class="fgrid">
+    <div>
+      <h4>Про проєкт</h4>
+      <p style="font-size:17px;max-width:420px">Інформаційний сайт про правила мінної безпеки для цивільних. Не замінює інструктажу фахівців ДСНС і не є інструкцією з поводження з вибухонебезпечними предметами.</p>
+    </div>
+    <div>
+      <h4>Розділи</h4>
+      <a href="#rules">Правила</a><a href="#field">Мінне поле</a><a href="#signs">Знаки</a><a href="#catalog">Довідник</a><a href="#quiz">Тест</a>
+    </div>
+    <div>
+      <h4>Допомога</h4>
+      <a href="tel:101">ДСНС — 101</a><a href="tel:102">Поліція — 102</a><a href="tel:103">Швидка — 103</a><a href="tel:112">Екстрена — 112</a>
+    </div>
+    <div class="src">
+      <h4>Джерела</h4>
+      <a href="https://dsns.gov.ua/dovidka-shhodo-zaxodiv-protiminnoyi-diialnosti-dsns-ukrayini/naibils-rozpovsiudzenni-vibuxonebezpecni-predmeti">ДСНС України: «Найбільш розповсюджені вибухонебезпечні предмети» (фото)</a>
+      <a href="https://hmh.news/en/32028/ukraine-has-become-one-of-the-most-mined-countries-in-the-world-a-quarter-of-its-territory-is-under-threat/amp/">Humanitarian Media Hub / Humanity &amp; Inclusion, березень 2026</a>
+      <a href="https://mon.gov.ua/news/86-tysiach-zneshkodzhenykh-vnp-za-2025-rik-do-dnia-minnoi-prosvity-dsns-i-partnery-zaklykaiut-navchaty-ditei-minnii-bezpetsi">МОН: курс «Як навчати дітей мінної безпеки»</a>
+    </div>
+  </div>
+  <div class="fwm" aria-hidden="true">Мінна безпека</div>
+  <div class="fbottom"><span>© 2026 Мінна безпека</span><span>Побачив — не підходь, не торкайся, телефонуй 101</span></div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Предмет із довідника">
+  <div class="box">
+    <div class="img"><img id="lbImg" alt=""></div>
+    <div class="txt">
+      <button class="pill close" id="lbClose">Закрити ✕</button>
+      <span class="tag stroke" id="lbCat" style="align-self:flex-start"></span>
+      <h3 id="lbName"></h3>
+      <p class="mute">Фото: ДСНС України</p>
+      <dl class="facts" id="lbFacts"></dl>
+      <div class="warnbox" id="lbTodo">Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця.</div>
+      <p class="disc">Реальний вигляд предмета може відрізнятися від фото. Відсутність схожості з фото не означає відсутності загрози.</p>
+      <div class="navs"><button class="pill" id="lbPrev">← Попередній</button><button class="pill" id="lbNext">Наступний →</button></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---------- DATA ---------- */
+const RULES=[
+  {n:"01",c:"Правило",t:"Не підходь",p:"Помітив щось підозріле — зупинись і відійди тим самим шляхом. Не наближайся, щоб «роздивитися».",bg:"var(--red)",fg:"#fff",
+   svg:`<svg viewBox="0 0 200 200"><circle cx="100" cy="100" r="88" fill="none" stroke="#fff" stroke-width="12"/><path d="M78 150V78a9 9 0 0 1 18 0v34V62a9 9 0 0 1 18 0v50V70a9 9 0 0 1 18 0v52c0 22-14 36-34 36h-6c-12 0-20-6-26-16l-18-30a9 9 0 0 1 15-10z" fill="#fff"/></svg>`},
+  {n:"02",c:"Правило",t:"Не торкайся",p:"Не піднімай, не штовхай, не перевертай і не кидай. Навіть «старий» чи іржавий предмет може вибухнути.",bg:"var(--yellow)",fg:"#000",
+   svg:`<svg viewBox="0 0 200 200"><path d="M70 160V80a10 10 0 0 1 20 0v30V60a10 10 0 0 1 20 0v50V68a10 10 0 0 1 20 0v56c0 22-14 36-34 36" fill="none" stroke="#000" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/><path d="M30 30l140 140" stroke="#000" stroke-width="14" stroke-linecap="round"/></svg>`},
+  {n:"03",c:"Правило",t:"Телефонуй 101",p:"Повідом ДСНС або поліцію (102): що бачиш і де саме. Дочекайся фахівців на безпечній відстані.",bg:"#fff",fg:"#000",
+   svg:`<svg viewBox="0 0 200 200"><text x="100" y="124" text-anchor="middle" font-family="Nastup Basic,Arial Black,sans-serif" font-size="66" fill="#000">101</text><path d="M30 160h140" stroke="#e5231b" stroke-width="10" stroke-linecap="round"/></svg>`},
+  {n:"04",c:"Звичка",t:"Ходи перевіреними шляхами",p:"Тільки асфальтовані, протоптані й перевірені дороги. Узбіччя, поля й лісосмуги — зона ризику.",bg:"var(--sand)",fg:"#000",
+   svg:`<svg viewBox="0 0 200 200"><path d="M70 190 90 10M130 190 110 10" stroke="#000" stroke-width="8" stroke-linecap="round"/><path d="M100 170v-22M100 125v-22M100 80v-22M100 38v-14" stroke="#000" stroke-width="7" stroke-linecap="round"/><g fill="#e5231b"><circle cx="32" cy="70" r="7"/><circle cx="168" cy="110" r="7"/><circle cx="44" cy="150" r="7"/><circle cx="160" cy="40" r="7"/></g></svg>`},
+  {n:"05",c:"Звичка",t:"Не збирай «сувеніри»",p:"Уламки, гільзи, частини дронів і ракет — не трофеї. Їх не можна нести додому чи показувати друзям.",bg:"var(--olive)",fg:"#fff",
+   svg:`<svg viewBox="0 0 200 200"><rect x="40" y="70" width="120" height="96" rx="10" fill="none" stroke="#fff" stroke-width="10"/><path d="M75 70V54a25 25 0 0 1 50 0v16" fill="none" stroke="#fff" stroke-width="10"/><path d="M30 30l140 140" stroke="#ffd23f" stroke-width="12" stroke-linecap="round"/></svg>`},
+  {n:"06",c:"Звичка",t:"Попередь інших",p:"Розкажи дітям і літнім родичам, як діяти. Попроси людей поруч не підходити до знахідки, доки не приїдуть фахівці.",bg:"#000",fg:"#fff",
+   svg:`<svg viewBox="0 0 200 200"><path d="M40 85h28l60-35v100l-60-35H40z" fill="none" stroke="#fff" stroke-width="10" stroke-linejoin="round"/><path d="M68 115l10 40h18l-8-40" fill="none" stroke="#fff" stroke-width="10" stroke-linejoin="round"/><path d="M150 75q16 25 0 50M166 60q28 40 0 80" fill="none" stroke="#e5231b" stroke-width="9" stroke-linecap="round"/></svg>`}
+];
+
+const SKULL=`<g stroke="#fff" stroke-width="7.5" stroke-linecap="round"><path d="M20 66 80 90M80 66 20 90"/></g><g fill="#fff"><circle cx="16.8" cy="68.5" r="5"/><circle cx="19.4" cy="62" r="5"/><circle cx="80.6" cy="93.5" r="5"/><circle cx="83.2" cy="87" r="5"/><circle cx="83.2" cy="68.5" r="5"/><circle cx="80.6" cy="62" r="5"/><circle cx="19.4" cy="93.5" r="5"/><circle cx="16.8" cy="87" r="5"/></g><path d="M50 12c-15 0-26 10.5-26 25 0 8.5 4 14.5 9.5 18.5v8.5c0 2.2 1.8 4 4 4h25c2.2 0 4-1.8 4-4v-8.5C72 51.5 76 45.5 76 37c0-14.5-11-25-26-25z" fill="#fff"/><ellipse cx="40.5" cy="38" rx="7" ry="7.5" fill="#e5231b"/><ellipse cx="59.5" cy="38" rx="7" ry="7.5" fill="#e5231b"/><path d="M50 47.5l-4 7h8z" fill="#e5231b"/><path d="M44 61v7M50 61v7M56 61v7" stroke="#e5231b" stroke-width="2.4" stroke-linecap="round"/>`;
+const SIGNS=[
+  {t:"Офіційний знак «Небезпечно, міни!»",p:"Червоний або помаранчевий квадрат чи трикутник із білим черепом і схрещеними кістками, написи «НЕБЕЗПЕЧНО МІНИ!» та «DANGER MINES!». Далі за знак — ані кроку.",dark:true,
+   svg:`<svg viewBox="0 0 220 150"><g transform="translate(40 0)"><rect width="140" height="140" rx="6" fill="#e5231b"/><rect x="6" y="6" width="128" height="128" rx="3" fill="none" stroke="#fff" stroke-width="3"/><text x="70" y="27" text-anchor="middle" font-family="Nastup Basic,Arial Black,sans-serif" font-size="13" fill="#fff" textLength="104" lengthAdjust="spacingAndGlyphs">НЕБЕЗПЕЧНО</text><g transform="translate(37 31) scale(.66)">${SKULL}</g><text x="70" y="113" text-anchor="middle" font-family="Nastup Basic,Arial Black,sans-serif" font-size="17" fill="#fff">МІНИ!</text><text x="70" y="126" text-anchor="middle" font-family="Fixel Text,Arial,sans-serif" font-weight="700" font-size="8" letter-spacing=".5" fill="#fff">DANGER MINES!</text></g></svg>`},
+  {t:"Сигнальна стрічка",p:"Червоно-біла або жовто-чорна стрічка огороджує небезпечну ділянку. Не перелазь і не підлазь під неї.",
+   svg:`<svg viewBox="0 0 220 150"><path d="M30 30v110M190 30v110" stroke="#000" stroke-width="6" stroke-linecap="round"/><defs><pattern id="st" width="28" height="20" patternUnits="userSpaceOnUse" patternTransform="skewX(-35)"><rect width="14" height="20" fill="#e5231b"/><rect x="14" width="14" height="20" fill="#fff"/></pattern></defs><path d="M30 58Q110 76 190 58v20Q110 96 30 78z" fill="url(#st)" stroke="#000" stroke-width="1"/></svg>`},
+  {t:"Схрещені палиці",p:"Дві гілки чи палиці, складені хрестом або встромлені в землю, — поширений саморобний знак мінної небезпеки.",
+   svg:`<svg viewBox="0 0 220 150"><path d="M60 140 160 20M160 140 60 20" stroke="#6b4e2e" stroke-width="9" stroke-linecap="round"/><path d="M20 140h180" stroke="#000" stroke-width="3"/></svg>`},
+  {t:"Зав’язана трава",p:"Пучок трави чи очерету, зав’язаний вузлом, може позначати місце, де знайшли міну.",
+   svg:`<svg viewBox="0 0 220 150"><g stroke="#5d6040" stroke-width="5" stroke-linecap="round" fill="none"><path d="M110 140C104 110 100 90 108 70 116 50 96 36 90 18"/><path d="M110 140C116 110 122 90 112 70 104 52 124 36 132 16"/><path d="M110 140C108 112 112 96 110 72 108 52 110 34 110 12"/><path d="M80 140c4-22-4-34-14-48M140 140c-4-22 4-34 14-48M60 140c2-14-4-20-10-28M160 140c-2-14 4-20 10-28"/></g><ellipse cx="110" cy="70" rx="14" ry="7" fill="#e5231b"/><path d="M20 140h180" stroke="#000" stroke-width="3"/></svg>`},
+  {t:"Камені рядом чи купкою",p:"Камені, викладені в лінію, колом або пірамідкою на дорозі чи узбіччі, — сигнал «Сюди не йди».",
+   svg:`<svg viewBox="0 0 220 150"><g fill="#9a9a9e" stroke="#000" stroke-width="2"><ellipse cx="40" cy="120" rx="17" ry="12"/><ellipse cx="80" cy="122" rx="15" ry="11"/><ellipse cx="118" cy="120" rx="17" ry="12"/><ellipse cx="156" cy="122" rx="14" ry="10"/><ellipse cx="190" cy="120" rx="15" ry="11"/><ellipse cx="118" cy="98" rx="13" ry="9"/><ellipse cx="118" cy="80" rx="9" ry="7"/></g><path d="M10 134h200" stroke="#000" stroke-width="3"/></svg>`},
+  {t:"Ганчірка, пляшка, бляшанка",p:"Шматок тканини на дереві чи паркані, пляшка або банка, надягнута на палицю, — теж можуть бути саморобним попередженням.",
+   svg:`<svg viewBox="0 0 220 150"><path d="M70 140V20" stroke="#6b4e2e" stroke-width="8" stroke-linecap="round"/><path d="M74 30c30-6 46 10 70 4-6 14-4 28 4 40-26 6-42-10-74-2z" fill="#e5231b"/><path d="M150 140V64" stroke="#6b4e2e" stroke-width="7" stroke-linecap="round"/><rect x="138" y="40" width="24" height="34" rx="6" fill="#7fb3c9" stroke="#000" stroke-width="2"/><rect x="145" y="30" width="10" height="12" fill="#7fb3c9" stroke="#000" stroke-width="2"/><path d="M20 140h180" stroke="#000" stroke-width="3"/></svg>`}
+];
+
+const NEWS=[
+  {tag:"Міна",lvl:3,t:"Протипіхотні міни",img:"pfm-1",cap:"ПФМ-1 «Пелюстка»",p:"Можуть бути закопані або лежати зверху. Серед них — дрібні пластикові ПФМ-1 «пелюстки» зеленого чи коричневого кольору, які розкидають дистанційно."},
+  {tag:"Пастка",lvl:3,t:"Розтяжки",img:"ozm-72",cap:"ОЗМ-72",p:"Тонкий дріт або волосінь, натягнуті над землею між деревами, кущами, у дверях. Не смикай, не перерізай, не переступай — відійди назад."},
+  {tag:"Боєприпас",lvl:3,t:"Касетні суббоєприпаси",img:"ptab-1m",cap:"ПТАБ-1М",p:"Невеликі металеві циліндри або кульки, часто з «хвостиком» чи стрічкою. Частина не вибухає при падінні й лишається вкрай чутливою."},
+  {tag:"Боєприпас",lvl:2,t:"Нерозірвані снаряди й ракети",img:"as-152",cap:"артилерійський снаряд 152 мм",p:"Снаряди, міни, хвостовики та уламки ракет — навіть пошкоджені й іржаві. Можуть лежати в полі, на подвір’ї, у річці чи застрягти в даху."},
+  {tag:"Боєприпас",lvl:2,t:"Скиди з дронів",img:"vog-25",cap:"ВОГ-25",p:"Невеликі гранати й постріли до гранатометів, скинуті з дронів, часто не розриваються. Особливо їх багато в прифронтових громадах."},
+  {tag:"Пастка",lvl:3,t:"Міни-пастки та сюрпризи",img:"ms-3",cap:"МС-3",p:"Вибухівку ховають під предмети, у двері, техніку, меблі. Не чіпай речей у незвичних місцях — телефонів, гаманців, іграшок, сумок."}
+];
+
+const CATS=[
+  ["pp","Протипіхотні міни"],["pt","Протитанкові міни"],["trap","Міни-пастки"],["cl","Касетні боєприпаси"],
+  ["vog","Постріли гранатометів (ВОГ)"],["gr","Ручні гранати"],["mm","Мінометні міни"],["as","Артилерійські снаряди"],
+  ["rs","Реактивні снаряди"],["atgm","Протитанкові керовані ракети"],["rk","Ракети"],["ab","Авіаційні бомби"]
+];
+const ITEMS=[
+  ["pfm-1","ПФМ-1 «Пелюстка»","pp"],["pmn","ПМН","pp"],["pmn-2","ПМН-2","pp"],["pmn-4","ПМН-4","pp"],["ozm-72","ОЗМ-72","pp"],["pom-2","ПОМ-2","pp"],["pomz-2m","ПОМЗ-2М","pp"],["mon-50","МОН-50","pp"],["mon-90","МОН-90","pp"],["mon-100","МОН-100","pp"],["mon-200","МОН-200","pp"],
+  ["tm-62m","ТМ-62М","pt"],["tm-62p3","ТМ-62П3","pt"],["ptm-1","ПТМ-1","pt"],["ptm-4","ПТМ-4","pt"],
+  ["ms-3","МС-3 (міна-сюрприз)","trap"],["ml-7","МЛ-7 (міна-пастка)","trap"],
+  ["9n210","9Н210","cl"],["9n24","9Н24","cl"],["3b30","3Б30","cl"],["ptab-1m","ПТАБ-1М","cl"],["ptab-2-5ko","ПТАБ-2,5КО","cl"],["ao-2-5","АО-2,5 РТ / РТМ","cl"],["o-10","О-10","cl"],
+  ["vog-17","ВОГ-17","vog"],["vog-25","ВОГ-25","vog"],["vog-25p","ВОГ-25П","vog"],
+  ["f-1","Ф-1","gr"],["rgd-5","РГД-5","gr"],["rgn","РГН","gr"],["rgo","РГО","gr"],["rkg-3","РКГ-3","gr"],
+  ["mm-60","Мінометна міна 60 мм","mm"],["mm-82","Мінометна міна 82 мм","mm"],["mm-120","Мінометна міна 120 мм","mm"],
+  ["as-100","Снаряд 100 мм","as"],["as-125","Снаряд 125 мм","as"],["as-152","Снаряд 152 мм","as"],
+  ["grad","122 мм «Град»","rs"],["uragan","220 мм «Ураган»","rs"],["smerch","300 мм «Смерч»","rs"],
+  ["fagot","9М111 «Фагот»","atgm"],["konkurs","9М113 «Конкурс»","atgm"],["refleks","9М119 «Рефлекс»","atgm"],["maliutka","9М14 «Малютка»","atgm"],
+  ["kalibr","3М54 «Калібр»","rk"],["iskander","«Іскандер-М»","rk"],["tochka-u","9М79 «Точка-У»","rk"],["kh-31","Х-31","rk"],["r-27","Р-27","rk"],
+  ["fab-250-m54","ФАБ-250 М54","ab"],["fab-250-m62","ФАБ-250 М62","ab"],["fab-500-m54","ФАБ-500 М54","ab"],["fab-500-m62","ФАБ-500 М62","ab"],["fab-500","ФАБ-500","ab"]
+];
+/* Описи предметів за id (джерела: ДСНС України, UNICEF Ukraine) */
+const DESC={"pfm-1":{"what":"Невелика протипіхотна міна, відома за формою, що нагадує пелюстку або метелика.","looks":"Невеликий плаский предмет асиметричної форми; колір може бути зеленуватим, коричневим або зміненим через забруднення.","where":"На поверхні ґрунту, серед трави та сміття на територіях, де відбувалися бойові дії.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"pmn":{"what":"Протипіхотна міна фугасного типу.","looks":"Зазвичай має компактний округлий корпус; у реальних умовах може бути прихована ґрунтом.","where":"На ділянках колишніх бойових дій, поблизу військових позицій та на неперевіреній місцевості.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"pmn-2":{"what":"Модель протипіхотної міни, що становить смертельну небезпеку для людей.","looks":"Компактний округлий корпус із характерною рельєфною верхньою частиною; вигляд змінюється від пошкоджень.","where":"На неперевірених стежках, полях та інших територіях, де перебували військові.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"pmn-4":{"what":"Різновид протипіхотної міни фугасної дії.","looks":"Невеликий переважно круглий предмет, який не завжди помітний на тлі землі.","where":"На територіях активних бойових дій та поблизу колишніх позицій.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"ozm-72":{"what":"Протипіхотна міна осколкової дії.","looks":"Металевий корпус, який може бути схований у землі; видима частина не обов’язково схожа на зображення в довіднику.","where":"У лісосмугах, біля укріплень та на інших потенційно замінованих ділянках.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"pom-2":{"what":"Протипіхотна міна, яку можуть залишати на місцевості дистанційно.","looks":"Металевий предмет незвичної форми; окремі елементи можуть бути пошкоджені або приховані рослинністю.","where":"На відкритій місцевості, у траві та на ділянках, що зазнали обстрілів.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"pomz-2m":{"what":"Протипіхотна осколкова міна старішого типу.","looks":"Невеликий металевий корпус з помітною ребристою поверхнею, іноді сильно іржавий.","where":"Біля колишніх оборонних позицій, у кущах та лісосмугах.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"mon-50":{"what":"Протипіхотна осколкова міна направленої дії.","looks":"Переважно вигнутий прямокутний корпус; колір і стан поверхні бувають різними.","where":"Біля колишніх укріплень, споруд і на інших небезпечних ділянках.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"mon-90":{"what":"Протипіхотна міна направленої осколкової дії.","looks":"Корпус із вигнутою фронтальною поверхнею, який може бути замаскований або частково закритий.","where":"Поблизу військових позицій і споруд на неперевірених територіях.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"mon-100":{"what":"Протипіхотна осколкова міна направленої дії.","looks":"Металевий корпус округлої форми; іржа й бруд можуть приховувати характерні ознаки.","where":"На територіях колишніх бойових дій, поблизу споруд та укріплень.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"mon-200":{"what":"Велика міна направленої осколкової дії.","looks":"Металевий корпус округлого обрису, що може бути замаскований у довкіллі.","where":"Біля колишніх оборонних позицій та на закритих чи неперевірених територіях.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"tm-62m":{"what":"Протитанкова міна, призначена для ураження транспортних засобів.","looks":"Великий плаский металевий корпус округлої форми; може бути іржавим або частково закопаним.","where":"На дорогах, узбіччях, полях і підступах до колишніх позицій.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"tm-62p3":{"what":"Протитанкова міна з неметалевими елементами корпусу.","looks":"Плаский округлий корпус, що може бути майже непомітним під шаром ґрунту.","where":"На неперевірених дорогах та ділянках, де діяла військова техніка.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"ptm-1":{"what":"Протитанкова міна дистанційного мінування.","looks":"Незвичний подовжений корпус; предмет може виглядати як уламок обладнання.","where":"На відкритій місцевості та ділянках, що зазнали мінування або обстрілів.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"ptm-4":{"what":"Протитанкова міна, яка може потрапляти на місцевість дистанційно.","looks":"Компактний корпус складної форми; навіть пошкоджені частини небезпечні.","where":"На дорогах, полях та інших неперевірених ділянках бойових дій.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"ms-3":{"what":"Міна-пастка, небезпечна для людини навіть тоді, коли виглядає як звичайний предмет.","looks":"Невеликий корпус; за зовнішнім виглядом неможливо безпечно визначити його стан.","where":"У покинутих будівлях, серед залишених речей і на колишніх військових позиціях.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"ml-7":{"what":"Міна-пастка, яку можуть приховувати серед навколишніх предметів.","looks":"Компактний предмет, який легко сплутати з деталлю чи побутовим виробом.","where":"На неперевірених ділянках, у покинутих спорудах і серед залишених речей.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"9n210":{"what":"Касетний суббоєприпас, який може залишитися небезпечним після падіння.","looks":"Порівняно невеликий металевий предмет; форма та цілісність можуть істотно змінитися.","where":"На територіях, що зазнали обстрілів касетними боєприпасами.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"9n24":{"what":"Один із типів касетних суббоєприпасів.","looks":"Невеликий предмет з металевими частинами, який може нагадувати уламок техніки.","where":"У полях, дворах та на відкритих ділянках після обстрілів.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"3b30":{"what":"Касетний суббоєприпас, що становить небезпеку навіть у пошкодженому стані.","looks":"Невеликий металевий корпус; його не слід намагатися впізнати шляхом наближення.","where":"На місцевості після застосування касетних боєприпасів.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"ptab-1m":{"what":"Малогабаритний протитанковий суббоєприпас касетного типу.","looks":"Компактний металевий предмет, іноді з елементами стабілізації; може бути пошкоджений.","where":"На полях та інших територіях, що постраждали від обстрілів.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"ptab-2-5ko":{"what":"Протитанковий суббоєприпас, що може залишатися вибухонебезпечним після падіння.","looks":"Невеликий металевий корпус із деталями, які неспеціаліст може прийняти за брухт.","where":"На відкритій місцевості після застосування касетних засобів ураження.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"ao-2-5":{"what":"Осколкові авіаційні суббоєприпаси касетного типу.","looks":"Невеликі металеві предмети різних станів збереження; можливі деформації.","where":"На ділянках, які зазнали авіаційних ударів або касетних обстрілів.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"o-10":{"what":"Касетний суббоєприпас осколкового типу.","looks":"Невеликий вибухонебезпечний об’єкт, який може виглядати як металевий уламок.","where":"На місцевості після касетних обстрілів; навіть одинична знахідка є підставою для виклику фахівців.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"vog-17":{"what":"Боєприпас для автоматичного гранатомета.","looks":"Невеликий металевий предмет циліндричної форми; може бути цілим або розірваним не повністю.","where":"На колишніх бойових позиціях і територіях обстрілів.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"vog-25":{"what":"Гранатометний постріл, який також може траплятися серед залишків бойових дій.","looks":"Компактний металевий корпус округло-циліндричного обрису.","where":"У траві, на ґрунті, серед уламків після бойових дій.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"vog-25p":{"what":"Один із різновидів гранатометного боєприпасу.","looks":"Невеликий металевий предмет, схожий на інші гранатометні постріли; точно визначати модель цивільним не потрібно.","where":"На територіях зі слідами боїв або обстрілів.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"f-1":{"what":"Ручна осколкова граната.","looks":"Компактний округлий корпус із характерною сегментованою поверхнею; може бути іржавим.","where":"На колишніх позиціях, у покинутих будівлях, серед залишених речей.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"rgd-5":{"what":"Ручна осколкова граната.","looks":"Невеликий гладкий металевий корпус округлої форми, часто зеленуватого кольору.","where":"На ділянках бойових дій, біля техніки та в залишених спорудах.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"rgn":{"what":"Ручна граната осколкового типу.","looks":"Компактний округлий металевий корпус; забруднення може приховувати відмінності від інших гранат.","where":"На територіях, де велися бої або залишилися боєприпаси.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"rgo":{"what":"Ручна осколкова граната.","looks":"Округлий металевий предмет з рельєфними елементами; не завжди має впізнаваний вигляд.","where":"Біля колишніх позицій, у покинутих будівлях та серед військового майна.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"rkg-3":{"what":"Ручна протитанкова граната.","looks":"Металевий предмет з подовженими елементами корпусу; може нагадувати технічну деталь.","where":"На ділянках бойових дій та серед залишеної амуніції.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"mm-60":{"what":"Мінометний боєприпас, що може не розірватися після пострілу.","looks":"Подовжений металевий корпус із хвостовою частиною; може бути деформованим.","where":"У ґрунті, на полях і в місцях мінометних обстрілів.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"mm-82":{"what":"Мінометний боєприпас, який небезпечний навіть після тривалого перебування в землі.","looks":"Витягнутий металевий корпус із характерною хвостовою частиною.","where":"На територіях обстрілів, у вирвах і серед уламків.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"mm-120":{"what":"Великогабаритний мінометний боєприпас.","looks":"Масивний подовжений металевий корпус із хвостовими деталями; може бути частково закопаний.","where":"На полях, подвір’ях та інших територіях, що зазнали мінометного вогню.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"as-100":{"what":"Артилерійський боєприпас, який може залишитися нерозірваним.","looks":"Довгий металевий предмет із загостреною або заокругленою передньою частиною.","where":"У ґрунті, біля вирв та на територіях артилерійських обстрілів.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"as-125":{"what":"Великокаліберний боєприпас для артилерійських систем або танкового озброєння.","looks":"Масивний подовжений металевий корпус, часто вкритий брудом або іржею.","where":"На полях, дорогах і поблизу колишніх бойових позицій.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"as-152":{"what":"Великокаліберний артилерійський боєприпас.","looks":"Великий довгастий металевий предмет; під час падіння може деформуватися або заглибитися в землю.","where":"На територіях артилерійських обстрілів, у будівлях та поблизу вирв.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"grad":{"what":"Реактивний снаряд системи залпового вогню.","looks":"Довгий циліндричний металевий корпус або його фрагменти; можливі хвостові частини.","where":"На територіях ракетних обстрілів, у ґрунті та серед уламків.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"uragan":{"what":"Реактивний снаряд системи залпового вогню.","looks":"Великогабаритний металевий корпус; уламки можуть мати незвичну форму.","where":"На територіях обстрілів, у полях, дворах і біля пошкоджених споруд.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"smerch":{"what":"Великогабаритний реактивний снаряд.","looks":"Масивні циліндричні частини корпусу або великі металеві уламки.","where":"На місцях падіння ракет, у ґрунті та серед руйнувань.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"fagot":{"what":"Протитанкова керована ракета.","looks":"Подовжений корпус із технічними елементами; після застосування можуть залишатися фрагменти.","where":"На колишніх позиціях, біля військової техніки та на місцях боїв.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"konkurs":{"what":"Протитанкова керована ракета.","looks":"Металеві циліндричні частини й елементи корпусу; зовнішній стан може бути пошкодженим.","where":"Поблизу колишніх протитанкових позицій і на територіях бойових дій.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"refleks":{"what":"Керований протитанковий ракетний боєприпас.","looks":"Подовжений металевий корпус або його фрагменти; неспеціалісту неможливо надійно встановити безпеку.","where":"На ділянках боїв із застосуванням бронетехніки.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"maliutka":{"what":"Протитанкова керована ракета старішого типу.","looks":"Подовжений корпус із виступними зовнішніми деталями; можливі сильно пошкоджені залишки.","where":"На колишніх позиціях, біля споруд і на територіях бойових дій.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"kalibr":{"what":"Крилата ракета; небезпеку становлять як нерозірвані частини, так і підозрілі уламки.","looks":"Великі металеві або композитні фрагменти корпусу, що можуть виглядати як авіаційні деталі.","where":"На місцях ракетних ударів, у будівлях, на подвір’ях та відкритих територіях.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"iskander":{"what":"Балістична ракета; її залишки можуть містити вибухонебезпечні елементи.","looks":"Масивні частини корпусу або уламки різного вигляду; модель за фрагментом визначають лише фахівці.","where":"На місцях ракетних ударів і серед руйнувань.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"tochka-u":{"what":"Тактичний ракетний боєприпас.","looks":"Великі металеві частини ракетного корпусу; можуть бути деформованими.","where":"На місцях ракетних ударів і на територіях бойових дій.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"kh-31":{"what":"Авіаційна керована ракета.","looks":"Подовжений металевий корпус або фрагменти обшивки й зовнішніх елементів.","where":"На місцях авіаційних і ракетних ударів.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"r-27":{"what":"Авіаційна керована ракета.","looks":"Подовжений корпус із зовнішніми аеродинамічними елементами або їх уламками.","where":"На місцях падіння авіаційних боєприпасів і серед уламків техніки.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"fab-250-m54":{"what":"Фугасна авіаційна бомба; нерозірваний боєприпас є надзвичайно небезпечним.","looks":"Великий подовжений металевий корпус, іноді з хвостовими елементами; може бути глибоко в землі.","where":"На місцях авіаударів, біля вирв, у ґрунті та пошкоджених спорудах.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"fab-250-m62":{"what":"Одна з моделей фугасної авіаційної бомби.","looks":"Великий обтічний металевий корпус; після падіння вигляд може суттєво змінитися.","where":"На територіях авіаційних ударів і серед руйнувань.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"fab-500-m54":{"what":"Великогабаритна фугасна авіаційна бомба.","looks":"Масивний металевий корпус із зовнішніми деталями, які можуть бути пошкоджені.","where":"На місцях авіаційних ударів, у ґрунті та пошкоджених будівлях.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"fab-500-m62":{"what":"Фугасна авіаційна бомба великого класу.","looks":"Великий подовжений обтічний корпус; може бути частково прихованим землею.","where":"На місцях авіаційних ударів та поблизу вирв.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."},"fab-500":{"what":"Узагальнене позначення авіаційної фугасної бомби; конкретну модифікацію встановлюють фахівці.","looks":"Великий металевий корпус; зовнішній вигляд залежить від модифікації та пошкоджень.","where":"На місцях авіаударів, у ґрунті та серед уламків.","todo":"Не підходити, не торкатися, не переносити. Повідомити 101 або 102 із безпечного місця."}};
+const catName=id=>(CATS.find(c=>c[0]===id)||[])[1];
+
+const PLACES=[
+  ["Узбіччя доріг","Не з’їжджай на узбіччя, навіть щоб розвернутися чи зупинитися."],
+  ["Поля й лісосмуги","Особливо неорані поля, де велися бої, та смуги дерев уздовж доріг."],
+  ["Покинуті будівлі","Будинки, підвали, гаражі, де перебували військові, — тільки після перевірки саперами."],
+  ["Окопи, бліндажі, блокпости","Колишні позиції майже завжди заміновані по периметру."],
+  ["Береги та водойми","Береги річок, ставків і пляжі в прифронтових та деокупованих районах."],
+  ["Місця падіння уламків","Після атак ракет і дронів не підходь до уламків — викликай 101."]
+];
+
+const QUIZ=[
+  {q:"Ти бачиш у траві незнайомий металевий предмет. Що робити спочатку?",o:["Підійти ближче, щоб сфотографувати","Зупинитися, відійти тим самим шляхом і подзвонити 101","Накрити предмет гілками, щоб ніхто не наступив"],a:1,f:"Не наближайся і не чіпай. Відійди тим шляхом, яким прийшов, і повідом ДСНС за номером 101."},
+  {q:"Ти зрозумів, що стоїш на мінному полі. Твоя перша дія?",o:["Швидко вибігти на дорогу","Лягти на землю","Зупинитися і не рухатися"],a:2,f:"Будь-який крок може бути небезпечним. Зупинись, попередь інших і клич допомогу."},
+  {q:"Які номери телефону варто набрати, якщо знайшов вибухонебезпечний предмет?",o:["101 або 102","104 або 109","Будь-який номер знайомих"],a:0,f:"101 — ДСНС, 102 — поліція. Також можна телефонувати на 112."},
+  {q:"Що означають схрещені палиці або зав’язана вузлом трава біля дороги?",o:["Що там хтось відпочивав","Можливе попередження про міни","Позначку для грибників"],a:1,f:"Це поширені саморобні знаки мінної небезпеки. Обійди це місце."},
+  {q:"Поруч підірвалася людина. Як правильно вчинити?",o:["Негайно бігти до неї","Не підходити, викликати рятувальників і говорити з постраждалим","Піти й нікому не казати"],a:1,f:"Поруч можуть бути інші міни. Виклич 101 і 103, підтримуй постраждалого голосом."}
+];
+
+/* ---------- RENDER ---------- */
+const $=s=>document.querySelector(s);
+$("#rulesGrid").innerHTML=RULES.map(r=>`
+  <article class="card rv">
+    <div class="tile" style="background:${r.bg};color:${r.fg}"><span class="num">${r.n}</span>${r.svg}</div>
+    <div class="meta">${r.c}</div>
+    <h3 class="h6">${r.t}</h3>
+    <p>${r.p}</p>
+  </article>`).join("");
+
+$("#signsGrid").innerHTML=SIGNS.map(s=>`
+  <article class="sign rv ${s.dark?"dark":""}">
+    <div class="art">${s.svg}</div>
+    <h3>${s.t}</h3><p>${s.p}</p>
+  </article>`).join("");
+
+$("#newsGrid").innerHTML=NEWS.map(n=>`
+  <article class="rv">
+    <div class="top"><span class="tag ${n.tag==="Пастка"?"stroke":""}">${n.tag}</span>
+      <span class="lvl">Ризик ${[1,2,3].map(i=>`<i class="${i>n.lvl?"off":""}"></i>`).join("")}</span></div>
+    <figure class="ill"><img src="img/${n.img}.webp" alt="${n.cap}" loading="lazy"><figcaption>На фото: ${n.cap}</figcaption></figure>
+    <h3 class="h6">${n.t}</h3><p>${n.p}</p>
+  </article>`).join("");
+
+$("#places").innerHTML=PLACES.map((p,i)=>`
+  <div class="place rv"><span class="i">${String(i+1).padStart(2,"0")}</span><span class="t">${p[0]}</span><span class="d">${p[1]}</span></div>`).join("");
+
+$("#mq").innerHTML="Не підходь<b>●</b>Не торкайся<b>●</b>Телефонуй 101<b>●</b>Ходи перевіреними шляхами<b>●</b>".repeat(6);
+
+/* ---------- CATALOG ---------- */
+let cur="all",expanded=false,visible=[];
+const LIMIT=15;
+function renderFilters(){
+  const btn=(id,name,n)=>`<button data-c="${id}" aria-pressed="${cur===id}">${name}<span>${n}</span></button>`;
+  $("#filters").innerHTML=btn("all","Усі",ITEMS.length)+CATS.map(c=>btn(c[0],c[1],ITEMS.filter(i=>i[2]===c[0]).length)).join("");
+  $("#filters").querySelectorAll("button").forEach(b=>b.onclick=()=>{cur=b.dataset.c;expanded=false;renderFilters();renderCat()});
+}
+function renderCat(){
+  const list=cur==="all"?ITEMS:ITEMS.filter(i=>i[2]===cur);
+  visible=(expanded||list.length<=LIMIT)?list:list.slice(0,LIMIT);
+  $("#catGrid").innerHTML=visible.map((it,k)=>`
+    <button class="item" data-k="${k}" aria-label="${it[1]} — відкрити фото">
+      <div class="ph"><img src="img/${it[0]}.webp" alt="${it[1]}" loading="lazy"></div>
+      <div class="cap"><b>${it[1]}</b><span>${catName(it[2])}</span></div>
+    </button>`).join("");
+  $("#catGrid").querySelectorAll(".item").forEach(b=>b.onclick=()=>openLb(+b.dataset.k));
+  const m=$("#moreBtn");
+  if(list.length>LIMIT){m.parentElement.style.display="flex";m.textContent=expanded?"Згорнути":`Показати всі (${list.length})`}
+  else m.parentElement.style.display="none";
+  const n=list.length;$("#catCount").textContent=`${n} ${plural(n)}`;
+}
+function plural(n){const a=n%10,b=n%100;return a===1&&b!==11?"предмет":(a>=2&&a<=4&&(b<10||b>=20))?"предмети":"предметів"}
+$("#moreBtn").onclick=()=>{expanded=!expanded;renderCat();if(!expanded)$("#catalog").scrollIntoView({behavior:"smooth"})};
+renderFilters();renderCat();
+
+/* ---------- LIGHTBOX ---------- */
+let lbk=0;const lb=$("#lb");
+function showLb(){const it=visible[lbk];$("#lbImg").src=`img/${it[0]}.webp`;$("#lbImg").alt=it[1];$("#lbName").textContent=it[1];$("#lbCat").textContent=catName(it[2]);
+  const d=DESC[it[0]]||{},f=[["Що це",d.what],["Як може виглядати",d.looks],["Де можна натрапити",d.where]].filter(x=>x[1]);
+  $("#lbFacts").innerHTML=f.map(([k,v])=>`<div><dt>${k}</dt><dd>${v}</dd></div>`).join("");
+  if(d.todo)$("#lbTodo").textContent=d.todo;
+  $(".lb .box").scrollTop=0}
+function openLb(k){lbk=k;showLb();lb.classList.add("open");document.body.classList.add("lock");$("#lbClose").focus()}
+function closeLb(){lb.classList.remove("open");document.body.classList.remove("lock")}
+$("#lbClose").onclick=closeLb;
+lb.addEventListener("click",e=>{if(e.target===lb)closeLb()});
+$("#lbPrev").onclick=()=>{lbk=(lbk-1+visible.length)%visible.length;showLb()};
+$("#lbNext").onclick=()=>{lbk=(lbk+1)%visible.length;showLb()};
+
+/* ---------- HERO FIELD ---------- */
+(function(){
+  const svg=$("#heroMap"),W=1600,H=840;
+  let seed=7;const rnd=()=>(seed=(seed*16807)%2147483647)/2147483647;
+  const centers=[[300,260,9],[1000,390,12],[1420,150,6],[620,700,7],[1350,720,6]];
+  let paths="";
+  centers.forEach(([cx,cy,n])=>{
+    const ph=[rnd()*6,rnd()*6,rnd()*6];
+    for(let k=1;k<=n;k++){
+      const r0=k*38;let d="";
+      for(let i=0;i<=96;i++){
+        const a=i/96*Math.PI*2;
+        const r=r0*(1+.16*Math.sin(3*a+ph[0])+.08*Math.sin(5*a+ph[1]+k*.15)+.05*Math.sin(2*a+ph[2]));
+        d+=(i?"L":"M")+(cx+Math.cos(a)*r*1.25).toFixed(1)+" "+(cy+Math.sin(a)*r).toFixed(1);
+      }
+      paths+=`<path d="${d}Z" fill="none" stroke="rgba(255,255,255,${k%4===0?.28:.11})" stroke-width="${k%4===0?1.4:1}"/>`;
+    }
+  });
+  let grid="";for(let x=0;x<=W;x+=100)grid+=`<path d="M${x} 0V${H}" stroke="rgba(255,255,255,.05)"/>`;
+  for(let y=0;y<=H;y+=100)grid+=`<path d="M0 ${y}H${W}" stroke="rgba(255,255,255,.05)"/>`;
+  const ROAD="M-20 600C300 560 520 480 760 500S1200 640 1620 560";
+  const road=`<path d="${ROAD}" fill="none" stroke="rgba(232,223,204,.55)" stroke-width="26"/><path d="${ROAD}" fill="none" stroke="rgba(0,0,0,.35)" stroke-width="2" stroke-dasharray="18 16"/>`;
+  // лісосмуга: ряд крон дерев уздовж лінії
+  let belt="";
+  for(let i=0;i<=16;i++){const t=i/16,x=200+t*460+(rnd()-.5)*18,y=140+t*196+(rnd()-.5)*22,r=15+rnd()*10;
+    belt+=`<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${r.toFixed(0)}" fill="#3e4428" stroke="rgba(255,255,255,.18)" stroke-width="1.2"/>`}
+  // промінь сканування: точка відліку на дорозі
+  const O=[760,500],R=1500;let wedge="";
+  for(let i=0;i<10;i++){const a1=(-40+i*4)*Math.PI/180,a2=(-40+(i+1)*4)*Math.PI/180;
+    wedge+=`<path d="M0 0L${(Math.cos(a1)*R).toFixed(0)} ${(Math.sin(a1)*R).toFixed(0)}A${R} ${R} 0 0 1 ${(Math.cos(a2)*R).toFixed(0)} ${(Math.sin(a2)*R).toFixed(0)}Z" fill="rgba(255,210,63,${(.02+i*.02).toFixed(3)})"/>`}
+  wedge+=`<path d="M0 0L${R} 0" stroke="rgba(255,210,63,.45)" stroke-width="1.5"/>`;
+  const beam=`<g transform="translate(${O[0]} ${O[1]})"><g id="beam">${wedge}</g></g>`;
+  const origin=`<g transform="translate(${O[0]} ${O[1]})"><circle r="20" fill="rgba(255,210,63,.18)" stroke="#ffd23f" stroke-width="2"/><circle r="8" fill="#ffd23f"/></g>`;
+  // міни: поле, лісосмуга, узбіччя
+  const marks=[
+    [880,330],[960,420],[1080,360],[1140,410],[1010,250],            // поле
+    [300,205],[420,252],[545,300],[610,250],                         // лісосмуга
+    [985,578],[1032,602],[1078,588],[1122,615],[1168,600],[1214,626],[1262,612],  // узбіччя праворуч
+    [222,594],[268,580],[314,604],[360,586],[404,568]               // узбіччя ліворуч
+  ];
+  let m="";marks.forEach(([x,y],i)=>{m+=`<g class="mk" transform="translate(${x} ${y})"><circle class="rg" r="6" fill="none" stroke="#e5231b" stroke-width="2" opacity="0"/><circle class="cr" r="6" fill="#e5231b" opacity=".22"/></g>`});
+  svg.innerHTML=grid+paths+belt+road+beam+m+origin;
+  // обертання променя і підсвічування мін, коли промінь проходить над ними
+  const beamEl=svg.querySelector("#beam"),mk=[...svg.querySelectorAll(".mk")];
+  const ang=marks.map(([x,y])=>(Math.atan2(y-O[1],x-O[0])*180/Math.PI+360)%360);
+  const PERIOD=16000,FADE=110; // 16 с на оберт; згасання за ~110°
+  const rings=mk.map(g=>g.querySelector(".rg")),cores=mk.map(g=>g.querySelector(".cr"));
+  function frame(t){
+    const r=(t%PERIOD)/PERIOD*360;
+    beamEl.setAttribute("transform",`rotate(${r.toFixed(2)})`);
+    ang.forEach((a,i)=>{
+      const lag=(r-a+360)%360,k=lag<FADE?1-lag/FADE:0;
+      cores[i].setAttribute("opacity",(.22+.78*k).toFixed(3));
+      rings[i].setAttribute("r",(6+(1-k)*30).toFixed(1));
+      rings[i].setAttribute("opacity",(k*.85).toFixed(3));
+    });
+  }
+  let raf=0,visible=true;
+  const loop=t=>{frame(t);raf=requestAnimationFrame(loop)};
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches){
+    beamEl.setAttribute("transform","rotate(35)");cores.forEach(c=>c.setAttribute("opacity",".85"));
+  }else{
+    raf=requestAnimationFrame(loop);
+    if("IntersectionObserver" in window)new IntersectionObserver(([e])=>{
+      if(e.isIntersecting&&!visible){visible=true;raf=requestAnimationFrame(loop)}
+      else if(!e.isIntersecting&&visible){visible=false;cancelAnimationFrame(raf)}
+    }).observe(svg);
+  }
+  // підписи прив'язані до координат сцени (працює і при обрізанні на телефоні)
+  const media=$("#heroMedia");
+  const LABELS=[["Лісосмуга",470,182],["Поле",1010,190],["Узбіччя",742,606]];
+  const els=LABELS.map(([t])=>{const s=document.createElement("span");s.className="label";s.textContent=t;media.appendChild(s);return s});
+  function place(){
+    const ctm=svg.getScreenCTM(),box=media.getBoundingClientRect();if(!ctm)return;
+    const pt=svg.createSVGPoint();
+    LABELS.forEach(([,x,y],i)=>{pt.x=x;pt.y=y;const q=pt.matrixTransform(ctm),lx=q.x-box.left,ly=q.y-box.top;
+      els[i].style.left=lx+"px";els[i].style.top=ly+"px";
+      els[i].style.display=(lx<40||lx>box.width-40)?"none":""});
+  }
+  place();addEventListener("resize",place);addEventListener("load",place);if(document.fonts)document.fonts.ready.then(place);
+})();
+
+/* ---------- FIT GIANT TYPE TO WIDTH ---------- */
+function fit(){
+  document.querySelectorAll(".hero-title,.fwm").forEach(el=>{
+    const box=el.clientWidth;if(!box)return;
+    const probe=document.createElement("span");
+    probe.style.cssText="position:absolute;visibility:hidden;white-space:nowrap;font-size:100px;font-family:inherit;letter-spacing:inherit";
+    probe.textContent=el.textContent.replace(/ /g," ");el.appendChild(probe);
+    const w=probe.getBoundingClientRect().width;probe.remove();
+    if(w)el.style.fontSize=Math.floor(100*box/w*.99)+"px";
+  });
+}
+fit();addEventListener("resize",fit);if(document.fonts)document.fonts.ready.then(fit);
+
+/* ---------- REVEAL + COUNTERS ---------- */
+const fmt=v=>Math.round(v).toLocaleString("uk-UA").replace(/\s/g," ");
+function count(el){
+  const to=+el.dataset.count,suf=el.dataset.suf||"",t0=performance.now(),d=1400;
+  (function f(t){const p=Math.min(1,(t-t0)/d),e=1-Math.pow(1-p,3);el.innerHTML=fmt(to*e)+suf;if(p<1)requestAnimationFrame(f)})(t0);
+}
+if("IntersectionObserver" in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(!e.isIntersecting)return;e.target.classList.add("in");io.unobserve(e.target);
+    const n=e.target.querySelector&&e.target.querySelector("[data-count]");if(n)count(n);
+  }),{threshold:.15});
+  document.querySelectorAll(".rv").forEach((el,i)=>{el.style.transitionDelay=(i%3)*80+"ms";io.observe(el)});
+}else document.querySelectorAll(".rv").forEach(el=>el.classList.add("in"));
+
+/* ---------- QUIZ ---------- */
+let qi=0,score=0;
+function renderQ(){
+  const box=$("#quizBox");
+  if(qi>=QUIZ.length){
+    const msg=score===5?"Чудово! Ти знаєш, як діяти. Поділися тестом із рідними.":score>=3?"Непогано, але варто ще раз переглянути правила вище.":"Варто перечитати правила — вони можуть врятувати життя.";
+    box.innerHTML=`<div class="progress">${QUIZ.map(()=>'<i class="on"></i>').join("")}</div>
+      <div class="score">${score}/5</div><p class="q" style="margin-top:18px">${msg}</p>
+      <button class="next" style="display:inline-block;margin-top:24px" id="again">Пройти ще раз</button>`;
+    $("#again").onclick=()=>{qi=0;score=0;renderQ()};return;
+  }
+  const Q=QUIZ[qi];
+  box.innerHTML=`<div class="progress">${QUIZ.map((_,i)=>`<i class="${i<=qi?"on":""}"></i>`).join("")}</div>
+    <div style="color:rgba(255,255,255,.55);font-weight:700;margin-bottom:10px">Запитання ${qi+1} з ${QUIZ.length}</div>
+    <div class="q">${Q.q}</div>
+    <div class="opts">${Q.o.map((o,i)=>`<button class="opt" data-i="${i}">${o}</button>`).join("")}</div>
+    <div class="fb" id="fb"></div>
+    <button class="next" id="next">${qi===QUIZ.length-1?"Результат":"Далі"} →</button>`;
+  box.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
+    const i=+b.dataset.i;
+    box.querySelectorAll(".opt").forEach(x=>{x.disabled=true;if(+x.dataset.i===Q.a)x.classList.add("right")});
+    if(i===Q.a){score++;$("#fb").innerHTML="<b>Правильно.</b> "+Q.f}else{b.classList.add("wrong");$("#fb").innerHTML="<b>Не зовсім.</b> "+Q.f}
+    $("#next").style.display="inline-block";
+  });
+  $("#next").onclick=()=>{qi++;renderQ()};
+}
+renderQ();
+
+/* ---------- PROGRESS ---------- */
+(function(){
+  const SECTIONS=[["rules","Правила"],["field","Мінне поле"],["signs","Знаки"],["catalog","Довідник"],["quiz","Тест"],["help","Допомога"]];
+  const prog=$("#progress"),fill=$("#pfill");let marks=[],ticking=false;
+  SECTIONS.forEach(([id,l])=>{const a=document.createElement("a");a.className="pt";a.href="#"+id;a.setAttribute("aria-label","Перейти до розділу: "+l);a.innerHTML=`<i></i><span>${l}</span>`;prog.appendChild(a)});
+  const pts=[...prog.querySelectorAll(".pt")];
+  function layout(){
+    const max=document.documentElement.scrollHeight-innerHeight;
+    marks=SECTIONS.map(([id])=>{const el=document.getElementById(id);return Math.min(1,Math.max(0,(el.getBoundingClientRect().top+scrollY-innerHeight*.35)/max))});
+    pts.forEach((p,i)=>p.style.left=`clamp(12px, ${(marks[i]*100).toFixed(2)}%, calc(100% - 12px))`);
+    update();
+  }
+  function update(){
+    ticking=false;
+    const max=document.documentElement.scrollHeight-innerHeight,p=max>0?scrollY/max:0;
+    fill.style.transform=`scaleX(${p.toFixed(4)})`;
+    pts.forEach((pt,i)=>pt.classList.toggle("done",p>=marks[i]-.001));
+  }
+  addEventListener("scroll",()=>{if(!ticking){ticking=true;requestAnimationFrame(update)}},{passive:true});
+  addEventListener("resize",layout);addEventListener("load",layout);
+  if(document.fonts)document.fonts.ready.then(layout);
+  new MutationObserver(()=>requestAnimationFrame(layout)).observe($("#catGrid"),{childList:true});
+  layout();
+})();
+
+/* ---------- MENU ---------- */
+const menu=$("#menu"),openBtn=$("#openMenu");
+function openMenu(){menu.classList.add("open");document.body.classList.add("lock");openBtn.setAttribute("aria-expanded","true");$("#closeMenu").focus()}
+function closeMenu(){menu.classList.remove("open");document.body.classList.remove("lock");openBtn.setAttribute("aria-expanded","false")}
+openBtn.onclick=openMenu;$("#closeMenu").onclick=closeMenu;
+menu.querySelectorAll("[data-close]").forEach(a=>a.addEventListener("click",closeMenu));
+addEventListener("keydown",e=>{
+  if(e.key==="Escape"){closeMenu();closeLb()}
+  if(lb.classList.contains("open")){if(e.key==="ArrowRight")$("#lbNext").click();if(e.key==="ArrowLeft")$("#lbPrev").click()}
+});
+
+/* ---------- COPY MEMO ---------- */
+const MEMO=`ПАМ’ЯТКА З МІННОЇ БЕЗПЕКИ
+1. Побачив підозрілий предмет — НЕ ПІДХОДЬ.
+2. НЕ ТОРКАЙСЯ: не піднімай, не штовхай, не кидай.
+3. ТЕЛЕФОНУЙ 101 (ДСНС), 102 (поліція) або 112.
+4. Ходи тільки перевіреними дорогами, не з’їжджай на узбіччя.
+5. Опинився на мінному полі — зупинись, не рухайся, клич допомогу. Назад — лише по власних слідах, якщо допомоги не буде.
+6. Не знімай попереджувальних знаків. Схрещені палиці, зав’язана трава, камені в ряд — можливе попередження про міни.`;
+$("#copyMemo").onclick=async()=>{
+  try{await navigator.clipboard.writeText(MEMO);$("#toast").textContent="Пам’ятку скопійовано — встав її в месенджер рідним."}
+  catch(e){$("#toast").textContent="Не вдалося скопіювати автоматично. Спробуй ще раз або перепиши правила з розділу «Головні правила»."}
+};
+</script>
+</body>
+</html>
